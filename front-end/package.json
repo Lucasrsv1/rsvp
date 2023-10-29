@@ -5,6 +5,7 @@
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
+		"publish": "ng build && del-cli --force ../public && cp-cli ./dist/rsvp ../public",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
 		"lint": "ng lint"
@@ -51,6 +52,8 @@
 		"@types/jquery": "^3.5.9",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
 		"@typescript-eslint/parser": "5.62.0",
+		"cp-cli": "^2.0.0",
+		"del-cli": "^5.1.0",
 		"eslint": "^8.49.0",
 		"eslint-plugin-only-warn": "^1.1.0",
 		"jasmine-core": "~4.6.0",
