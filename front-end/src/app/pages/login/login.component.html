@@ -1,0 +1,48 @@
+<div class="container pt-5 pb-5">
+	<div class="card p-3 my-5">
+		<h1 class="text-primary">Login</h1>
+
+		<form [formGroup]="form" (ngSubmit)="login()">
+			<div class="mb-3">
+				<div class="form-group">
+					<label for="username">Nome de Usuário:</label>
+					<app-visual-validator [config]="validations" field="username">
+						<input
+							#usernameInput
+							id="username"
+							type="username"
+							class="form-control"
+							formControlName="username"
+							placeholder="Digite seu nome de usuário"
+							autofocus
+						>
+					</app-visual-validator>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<div class="form-group">
+					<label for="senha">Senha:</label>
+					<app-visual-validator [config]="validations" field="senha">
+						<input
+							id="senha"
+							type="password"
+							class="form-control"
+							placeholder="Digite sua senha"
+							formControlName="senha"
+						>
+					</app-visual-validator>
+				</div>
+			</div>
+
+			<div class="text-center">
+				<button class="btn btn-dark ps-5 pe-5 mb-3 me-3" type="button" (click)="clear()">
+					Limpar
+				</button>
+				<button class="btn btn-primary ps-5 pe-5 mb-3" type="submit" [disabled]="form.invalid">
+					Login
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

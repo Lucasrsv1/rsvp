@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark pt-md-0 pb-md-0 px-3">
+	<div>
+		<button class="navbar-toggler pt-2 pb-2 me-2" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" aria-controls="menu" [attr.aria-expanded]="!isMenuCollapsed" aria-label="Abrir menu">
+			<fa-icon [icon]="faBars"></fa-icon>
+		</button>
+
+		<a class="navbar-brand" title="RSVP" [routerLink]="['/']">
+			<fa-icon class="me-2" [icon]="faEnvelopeCircleCheck"></fa-icon>
+			<span>RSVP</span>
+		</a>
+	</div>
+
+	<div class="navbar-collapse justify-content-between" id="menu" [collapse]="isMenuCollapsed" [isAnimated]="true">
+		<ul class="navbar-nav me-auto mb-0 d-sm-flex">
+			<li class="nav-item">
+				<a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['/home']">
+					<fa-icon class="me-2 d-inline-block d-md-inline" [icon]="faEnvelopeOpenText" title="Respostas dos Convidados"></fa-icon>
+					<span>Respostas dos Convidados</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav mb-0 flex-row" *ngIf="isLoggedIn">
+			<li class="nav-item">
+				<a class="nav-link active user" title="Sair" href="javascript:void(0)" (click)="logout()">
+					<span>Sair</span>
+					<fa-icon class="logout-icon ps-2" [icon]="faSignOutAlt"></fa-icon>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav mb-0 flex-row" *ngIf="!isLoggedIn">
+			<li class="nav-item">
+				<a class="nav-link active user pe-2" title="Entrar" [routerLink]="['/login']">
+					<span>Entrar</span>
+					<fa-icon class="logout-icon ps-2" [icon]="faSignInAlt"></fa-icon>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
