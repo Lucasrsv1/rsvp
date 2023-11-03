@@ -1,6 +1,6 @@
 {
 	"name": "rsvp",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Recebe as respostas dos convidados e provê uma área restrita para leitura das respostas recebidas",
 	"main": "index.js",
 	"scripts": {
